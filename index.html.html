@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<!-- saved from url=(0150)file:///C:/Users/Elgha/Downloads/%D8%B1%D8%AD%D9%84%D8%A9_%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D8%B7%D9%88%D8%B1%D8%A9_1.html -->
+<html lang="ar" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>رحلة التعافي — خطة طبيبي</title>
+<link rel="manifest" href="data:application/manifest+json,{%0A  \" name\":="" \"تعافي="" 84\",="" \"short_name\":="" \"تعافي\",="" \"start_url\":="" \".\",="" \"display\":="" \"standalone\",="" \"background_color\":="" \"#f5f5f5\",="" \"theme_color\":="" \"#222\",="" \"icons\":="" [{="" \"src\":="" \"data:image="" svg+xml,%3csvg="" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100" %3e%3ctext="" y=".9em" font-size="90" %3echart%3c="" text%3e%3c="" svg%3e\",="" \"sizes\":="" \"any\"="" }]="" }"=""><style>
+  :root {
+    /* الوضع الفاتح (الافتراضي الجديد) */
+    --bg: #f5f7fa;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --header-bg: #ffffffee;
+    --input-bg: #f8fafc;
+    --btn-bg: #ffffff;
+    --btn-text: #0f172a;
+    --accent: #16a34a;
+    --accent-bg: #dcfce7;
+    --accent-border: #86efac;
+    --accent-text: #166534;
+    --warn-bg: #fef3c7;
+    --warn-border: #fde047;
+    --warn-text: #92400e;
+    --danger: #e11d48;
+    --danger-bg: #ffe4e6;
+    --danger-border: #fda4af;
+    --danger-text: #9f1239;
+  }
+
+  body.night {
+    /* الوضع الليلي (يتم تفعيله بالزر) */
+    --bg: #0b1220;
+    --card: #10192e;
+    --text: #e9eef7;
+    --muted: #99a3b3;
+    --border: #1f2a44;
+    --header-bg: #0b1220ee;
+    --input-bg: #0c1426;
+    --btn-bg: #0c1426;
+    --btn-text: #e6eefb;
+    --accent: #4ade80;
+    --accent-bg: #12311e;
+    --accent-border: #1f7a3e;
+    --accent-text: #d7ffe1;
+    --warn-bg: #32240d;
+    --warn-border: #9a6a10;
+    --warn-text: #fff3cd;
+    --danger: #fb7185;
+    --danger-bg: #3a1521;
+    --danger-border: #a61b42;
+    --danger-text: #ffe4ea;
+  }
+
+  * { box-sizing:border-box }
+  body { margin:0; font-family:system-ui,Segoe UI,Roboto,Arial; color:var(--text); background:var(--bg); transition:0.3s }
+  header { padding:16px; border-bottom:1px solid var(--border); position:sticky; top:0; background:var(--header-bg); backdrop-filter:blur(8px); z-index:10 }
+  h1 { margin:0; font-size:18px }
+  .wrap { max-width:1100px; margin:16px auto; padding:0 12px }
+  .grid { display:grid; grid-template-columns:repeat(12,1fr); gap:12px }
+  .card { grid-column:span 12; background:var(--card); border:1px solid var(--border); border-radius:14px; padding:14px }
+  @media(min-width:900px){ .half{grid-column:span 6} }
+  label { display:block; font-size:12px; color:var(--muted); margin:8px 0 6px }
+  input, select, textarea { width:100%; padding:10px 12px; border-radius:10px; border:1px solid var(--border); background:var(--input-bg); color:var(--text); outline:none }
+  input:focus, textarea:focus { border-color:#3b82f6 }
+  .row { display:flex; gap:8px; align-items:center; flex-wrap:wrap }
+  .btn { padding:9px 12px; border-radius:10px; border:1px solid var(--border); background:var(--btn-bg); color:var(--btn-text); cursor:pointer; font-size:13px }
+  .btn.accent { background:var(--accent-bg); border-color:var(--accent-border); color:var(--accent-text) }
+  .btn.warn { background:var(--warn-bg); border-color:var(--warn-border); color:var(--warn-text) }
+  .btn.danger { background:var(--danger-bg); border-color:var(--danger-border); color:var(--danger-text) }
+  .muted { color:var(--muted) } 
+  .sub { font-size:12px; color:var(--muted) }
+  .ok { color:var(--accent) } 
+  .bad { color:var(--danger) }
+  .pill { display:inline-flex; gap:6px; align-items:center; padding:6px 10px; border-radius:20px; border:1px solid var(--border); background:var(--input-bg); font-size:12px; cursor:pointer }
+  .pill.active { background:var(--accent-bg); border-color:var(--accent-border) }
+  .bar { height:8px; background:var(--input-bg); border:1px solid var(--border); border-radius:999px; overflow:hidden; margin:6px 0 }
+  .bar>span { display:block; height:100%; background:linear-gradient(90deg,#60a5fa,#4ade80); transition:0.4s }
+  .table { width:100%; border-collapse:collapse; font-size:13px }
+  .table th, .table td { border-bottom:1px solid var(--border); padding:8px 6px; text-align:center }
+  dialog { border:none; border-radius:14px; background:var(--card); color:var(--text); max-width:900px; width:92%; padding:20px }
+  dialog::backdrop { background:#0008 }
+  #chartCard canvas { max-width:100%; }
+  .mood.active { background:var(--accent-bg) !important; border-color:var(--accent-border) !important; color:var(--accent-text) !important; }
+  .legend { display:flex; gap:14px; justify-content:center; margin-top:8px; font-size:12px; color:var(--muted); flex-wrap:wrap; }
+  .legend i { display:inline-block; width:11px; height:11px; border-radius:3px; vertical-align:-1px; margin-left:4px; }
+  .tip-card { border-right:3px solid var(--accent); }
+  .tip-eyebrow { font-size:12px; font-weight:700; color:var(--accent); margin-bottom:5px; }
+  .tip-body { margin:0 0 10px; font-size:14.5px; line-height:1.7; color:var(--text); }
+  .walk-line { font-size:13.5px; color:var(--accent-text); background:var(--accent-bg); border:1px solid var(--accent-border); border-radius:9px; padding:8px 12px; }
+  .freeze-card { background:var(--warn-bg); border-color:var(--warn-border); }
+  .freeze-list { margin:0; padding-right:18px; font-size:13px; color:var(--text); }
+  .freeze-list li { margin:3px 0; }
+  .tag-cut { font-size:10.5px; background:var(--accent-bg); color:var(--accent-text); border:1px solid var(--accent-border); padding:1px 7px; border-radius:20px; }
+  .remaining-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:10px; }
+  .rg-item { background:var(--input-bg); border:1px solid var(--border); border-radius:10px; padding:11px; text-align:center; }
+  .rg-item .rg-name { font-size:12px; color:var(--muted); margin-bottom:3px; }
+  .rg-item .rg-box { font-size:18px; font-weight:700; }
+  .rg-item .rg-cost { font-size:12px; color:var(--muted); }
+  .remaining-total { display:flex; justify-content:space-between; align-items:center; background:var(--accent-bg); border:1px solid var(--accent-border); border-radius:10px; padding:12px 16px; }
+  .remaining-total b { font-size:20px; color:var(--accent-text); }
+  .support-card { border-right:4px solid #7c6bd6; }
+  .support-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; }
+  .support-eyebrow { font-size:12px; font-weight:700; color:#7c6bd6; }
+  .support-ago { font-size:11.5px; color:var(--muted); background:var(--input-bg); border:1px solid var(--border); border-radius:20px; padding:2px 10px; }
+  .support-title { margin:2px 0 10px; font-size:16px; }
+  .sup-symptoms { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+  .sup-chip { font-size:12.5px; background:#efe9ff; color:#5b4bb0; border:1px solid #d8ccf5; border-radius:8px; padding:4px 10px; }
+  .sup-science { font-size:13px; line-height:1.7; color:var(--text); background:var(--input-bg); border:1px solid var(--border); border-radius:10px; padding:10px 12px; margin-bottom:10px; }
+  .sup-cbt { background:var(--accent-bg); border:1px solid var(--accent-border); border-radius:10px; padding:10px 12px; margin-bottom:10px; }
+  .sup-cbt-head { font-size:13px; font-weight:700; color:var(--accent-text); margin-bottom:5px; }
+  .sup-cbt-short { margin:0; font-size:13.5px; line-height:1.7; color:var(--text); }
+  .sup-details { margin-top:8px; }
+  .sup-details summary { cursor:pointer; font-size:12.5px; color:var(--accent-text); font-weight:600; }
+  .sup-cbt-long { margin:8px 0 0; font-size:13px; line-height:1.75; color:var(--text); }
+  .sup-reframe { margin-top:8px; font-size:12.5px; line-height:1.7; color:var(--text); border-right:2px solid var(--accent); padding-right:10px; }
+  .sup-motivate { font-size:13.5px; line-height:1.7; color:#6b5bc0; font-style:italic; text-align:center; padding:6px 4px 0; }
+  html.dark .sup-chip { background:#2a2440; color:#c9bdf0; border-color:#443a63; }
+  html.dark .sup-science { background:#1b2330; }
+  .journal-card { border-right:4px solid #16a34a; }
+  .journal-head { display:flex; justify-content:space-between; align-items:center; }
+  .journal-tools { display:flex; align-items:center; gap:10px; margin-top:8px; }
+  .mic-status { font-size:12px; color:var(--muted); }
+  .mic-btn-active { background:#dc2626 !important; color:#fff !important; border-color:#dc2626 !important; animation:pulse 1.2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.55} }
+  .journal-list { margin-top:12px; display:flex; flex-direction:column; gap:8px; }
+  .journal-item { background:var(--input-bg); border:1px solid var(--border); border-radius:10px; padding:10px 12px; }
+  .journal-item-date { font-size:11.5px; color:var(--muted); margin-bottom:4px; display:flex; justify-content:space-between; align-items:center; }
+  .journal-item-text { font-size:13.5px; line-height:1.7; color:var(--text); white-space:pre-wrap; }
+  .journal-del { cursor:pointer; color:#dc2626; font-size:12px; background:none; border:none; }
+  .freeze-action { margin-top:12px; padding-top:12px; border-top:1px dashed var(--warn-border); }
+  .freeze-action-head { font-weight:700; font-size:14px; margin-bottom:5px; color:var(--warn-text); }
+  .freeze-controls { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .freeze-controls select { flex:1; min-width:100px; }
+  .freeze-active-list { margin-top:10px; display:flex; flex-direction:column; gap:6px; }
+  .freeze-active-item { display:flex; justify-content:space-between; align-items:center; background:var(--input-bg); border:1px solid var(--border); border-radius:9px; padding:8px 11px; font-size:12.5px; }
+  .freeze-active-item button { cursor:pointer; color:#dc2626; background:none; border:none; font-size:12px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="row" style="justify-content:space-between">
+    <h1>رحلة التعافي — خطة طبيبي</h1>
+    <div class="row">
+      <button class="btn" id="openInv">المخزون</button>
+      <button class="btn" id="openRem">تذكيرات</button>
+      <button class="btn" id="prevDay">السابق</button>
+      <button class="btn" id="nextDay">التالي</button>
+      <button class="btn" id="darkMode">الوضع الليلي</button>
+      <button class="btn warn" id="resetStart">يوم البدء</button>
+      <button class="btn" id="exportCsv">CSV</button>
+      <button class="btn" id="exportPdf">PDF</button>
+      <button class="btn danger" id="wipe">مسح</button>
+    </div>
+  </div>
+  <div class="row" style="margin-top:8px;gap:12px;flex-wrap:wrap">
+    <span class="pill">بدء: <b id="startDateLabel">٥‏/٧‏/٢٠٢٦</b></span>
+    <span class="pill">اليوم: <b id="dayIdxLabel">1</b> / 75</span>
+    <span class="pill">أسبوع: <b id="weekLabel">1</b> — <span id="weekPhase">قبل الإجازة</span></span>
+    <span class="pill ok">تقدم: <span id="progressText">0%</span></span>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+    <div class="card" id="chartCard">
+      <h3 style="margin:0 0 6px">منحنى التخفيض (٪ من جرعة البداية)</h3>
+      <div id="chartHost" style="width:100%"><svg viewBox="0 0 700 180" style="width:100%;height:auto" preserveAspectRatio="xMidYMid meet"><line x1="34" y1="158.0" x2="690" y2="158.0" stroke="var(--border)" stroke-width="1"></line><text x="28" y="161.0" text-anchor="end" font-size="10" fill="var(--muted)">0%</text><line x1="34" y1="121.5" x2="690" y2="121.5" stroke="var(--border)" stroke-width="1"></line><text x="28" y="124.5" text-anchor="end" font-size="10" fill="var(--muted)">25%</text><line x1="34" y1="85.0" x2="690" y2="85.0" stroke="var(--border)" stroke-width="1"></line><text x="28" y="88.0" text-anchor="end" font-size="10" fill="var(--muted)">50%</text><line x1="34" y1="48.5" x2="690" y2="48.5" stroke="var(--border)" stroke-width="1"></line><text x="28" y="51.5" text-anchor="end" font-size="10" fill="var(--muted)">75%</text><line x1="34" y1="12.0" x2="690" y2="12.0" stroke="var(--border)" stroke-width="1"></line><text x="28" y="15.0" text-anchor="end" font-size="10" fill="var(--muted)">100%</text><path d="M34.0 12.0 L41.4 12.0 L48.7 12.0 L56.1 26.6 L63.5 26.6 L70.9 26.6 L78.2 26.6 L85.6 26.6 L93.0 26.6 L100.3 26.6 L107.7 41.2 L115.1 41.2 L122.4 41.2 L129.8 41.2 L137.2 41.2 L144.6 41.2 L151.9 41.2 L159.3 41.2 L166.7 41.2 L174.0 41.2 L181.4 41.2 L188.8 41.2 L196.2 41.2 L203.5 41.2 L210.9 55.8 L218.3 55.8 L225.6 55.8 L233.0 55.8 L240.4 55.8 L247.8 55.8 L255.1 55.8 L262.5 55.8 L269.9 55.8 L277.2 55.8 L284.6 55.8 L292.0 55.8 L299.3 55.8 L306.7 55.8 L314.1 70.4 L321.5 70.4 L328.8 70.4 L336.2 70.4 L343.6 70.4 L350.9 70.4 L358.3 70.4 L365.7 85.0 L373.1 85.0 L380.4 85.0 L387.8 85.0 L395.2 85.0 L402.5 85.0 L409.9 85.0 L417.3 99.6 L424.7 99.6 L432.0 99.6 L439.4 99.6 L446.8 99.6 L454.1 99.6 L461.5 99.6 L468.9 114.2 L476.2 114.2 L483.6 114.2 L491.0 114.2 L498.4 114.2 L505.7 114.2 L513.1 114.2 L520.5 128.8 L527.8 128.8 L535.2 128.8 L542.6 128.8 L550.0 128.8 L557.3 128.8 L564.7 128.8 L572.1 128.8 L579.4 128.8 L586.8 128.8 L594.2 128.8 L601.6 128.8 L608.9 128.8 L616.3 128.8 L623.7 128.8 L631.0 128.8 L638.4 128.8 L645.8 128.8 L653.1 128.8 L660.5 128.8 L667.9 128.8 L675.3 128.8 L682.6 128.8 L690.0 128.8 " fill="none" stroke="#e0843b" stroke-width="2.5" stroke-linejoin="round"></path><path d="M34.0 12.0 L41.4 12.0 L48.7 12.0 L56.1 20.8 L63.5 20.8 L70.9 20.8 L78.2 20.8 L85.6 20.8 L93.0 20.8 L100.3 20.8 L107.7 29.5 L115.1 29.5 L122.4 29.5 L129.8 29.5 L137.2 29.5 L144.6 29.5 L151.9 29.5 L159.3 39.7 L166.7 39.7 L174.0 39.7 L181.4 39.7 L188.8 39.7 L196.2 39.7 L203.5 39.7 L210.9 48.5 L218.3 48.5 L225.6 48.5 L233.0 48.5 L240.4 48.5 L247.8 48.5 L255.1 48.5 L262.5 57.3 L269.9 57.3 L277.2 57.3 L284.6 57.3 L292.0 57.3 L299.3 57.3 L306.7 57.3 L314.1 66.0 L321.5 66.0 L328.8 66.0 L336.2 66.0 L343.6 66.0 L350.9 66.0 L358.3 66.0 L365.7 76.2 L373.1 76.2 L380.4 76.2 L387.8 76.2 L395.2 76.2 L402.5 76.2 L409.9 76.2 L417.3 85.0 L424.7 85.0 L432.0 85.0 L439.4 85.0 L446.8 85.0 L454.1 85.0 L461.5 85.0 L468.9 102.5 L476.2 102.5 L483.6 102.5 L491.0 102.5 L498.4 102.5 L505.7 102.5 L513.1 102.5 L520.5 112.7 L527.8 112.7 L535.2 112.7 L542.6 112.7 L550.0 112.7 L557.3 112.7 L564.7 112.7 L572.1 112.7 L579.4 121.5 L586.8 121.5 L594.2 121.5 L601.6 121.5 L608.9 121.5 L616.3 121.5 L623.7 121.5 L631.0 121.5 L638.4 121.5 L645.8 121.5 L653.1 121.5 L660.5 121.5 L667.9 121.5 L675.3 121.5 L682.6 121.5 L690.0 121.5 " fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linejoin="round"></path><path d="M34.0 12.0 L41.4 12.0 L48.7 12.0 L56.1 12.0 L63.5 12.0 L70.9 12.0 L78.2 12.0 L85.6 12.0 L93.0 12.0 L100.3 12.0 L107.7 12.0 L115.1 12.0 L122.4 12.0 L129.8 12.0 L137.2 12.0 L144.6 12.0 L151.9 12.0 L159.3 12.0 L166.7 12.0 L174.0 12.0 L181.4 12.0 L188.8 12.0 L196.2 12.0 L203.5 12.0 L210.9 12.0 L218.3 12.0 L225.6 12.0 L233.0 12.0 L240.4 12.0 L247.8 12.0 L255.1 12.0 L262.5 48.5 L269.9 48.5 L277.2 48.5 L284.6 48.5 L292.0 48.5 L299.3 48.5 L306.7 48.5 L314.1 48.5 L321.5 48.5 L328.8 48.5 L336.2 48.5 L343.6 48.5 L350.9 48.5 L358.3 48.5 L365.7 48.5 L373.1 48.5 L380.4 48.5 L387.8 48.5 L395.2 48.5 L402.5 48.5 L409.9 48.5 L417.3 85.0 L424.7 85.0 L432.0 85.0 L439.4 85.0 L446.8 85.0 L454.1 85.0 L461.5 85.0 L468.9 85.0 L476.2 85.0 L483.6 85.0 L491.0 85.0 L498.4 85.0 L505.7 85.0 L513.1 85.0 L520.5 109.8 L527.8 109.8 L535.2 109.8 L542.6 109.8 L550.0 109.8 L557.3 109.8 L564.7 109.8 L572.1 109.8 L579.4 109.8 L586.8 109.8 L594.2 109.8 L601.6 109.8 L608.9 109.8 L616.3 109.8 L623.7 109.8 L631.0 109.8 L638.4 109.8 L645.8 109.8 L653.1 109.8 L660.5 109.8 L667.9 109.8 L675.3 109.8 L682.6 109.8 L690.0 109.8 " fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linejoin="round"></path><line x1="34.0" y1="12" x2="34.0" y2="158" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 3"></line><text x="34.0" y="10" text-anchor="middle" font-size="10" fill="var(--accent)">اليوم</text></svg></div>
+      <div class="legend">
+        <span><i style="background:#e0843b"></i> نايت كالم</span>
+        <span><i style="background:#3b82f6"></i> جابتين</span>
+        <span><i style="background:#16a34a"></i> أرمودافينيل</span>
+      </div>
+    </div>
+
+    <div class="card tip-card" id="tipCard">
+      <div class="tip-eyebrow" id="tipDay">الأحد · يوم بيت</div>
+      <p class="tip-body" id="tipBody">قسّم الكتابة لجلسات 25 دقيقة مع وقفة قصيرة. الخمول يسيطر على الجلسات الطويلة لا القصيرة.</p>
+      <div class="walk-line">🚶 مهمة المشي اليوم: <b id="walkMin">10</b> دقيقة</div>
+    </div>
+
+    <div class="card support-card" id="supportCard">
+      <div class="support-head">
+        <span class="support-eyebrow" id="supEyebrow">يوم تثبيت</span>
+        <span class="support-ago" id="supAgo">يوم تثبيت — لا تخفيض حديث</span>
+      </div>
+      <h3 class="support-title" id="supTitle">لا تخفيض حديثًا — يوم استقرار</h3>
+      <div id="supSymptoms" class="sup-symptoms"><span class="sup-chip">أعراض خفيفة أو معدومة غالبًا</span></div>
+      <div class="sup-science" id="supScience"><b>حالتك اليوم:</b> جسمك يتكيّف مع الجرعة الحالية. استغل الاستقرار لترسيخ النوم المنتظم والمشي والترطيب.</div>
+      <div class="sup-cbt">
+        <div class="sup-cbt-head">🧠 أداة اليوم</div>
+        <p class="sup-cbt-short" id="supCbtShort">اليوم مستقر نسبيًا — استثمر ذلك في ترسيخ عادة صغيرة (مشي، ماء، نوم منتظم).</p>
+        <details class="sup-details">
+          <summary>وسّع التمرين خطوة بخطوة</summary>
+          <p class="sup-cbt-long" id="supCbtLong">الأيام المستقرة ثمينة: تبني فيها الاحتياطي الذي يحملك في الأيام الصعبة. رسّخ إيقاعك (نوم واستيقاظ في وقت ثابت، مشي، ترطيب) فهو ما يخفّف حدة التخفيضات القادمة.</p>
+          <div class="sup-reframe" id="supReframe"><b>إعادة صياغة معرفية:</b><br>فكرة: «الهدوء مؤقت وسيأتي ما هو أسوأ». صياغة: «كل يوم مستقر يقوّي جهازي العصبي فعليًا. أنا أتقدّم».</div>
+        </details>
+      </div>
+      <div class="sup-motivate" id="supMotivate">الاستقرار ليس ركودًا، بل بناء صامت لاحتياطي يحملك لاحقًا.</div>
+    </div>
+
+    <div class="card journal-card" id="journalCard">
+      <div class="journal-head">
+        <h3 style="margin:0">📝 مذكراتي</h3>
+        <span class="sub" id="journalCount">لا مذكرات بعد</span>
+      </div>
+      <p class="sub" style="margin:4px 0 8px">اكتب ما تشعر به، أو اضغط المايك وتحدّث — يتحوّل كلامك لنص.</p>
+      <textarea id="journalInput" placeholder="اكتب هنا، أو استخدم زر المايك…" style="width:100%;min-height:90px;resize:vertical"></textarea>
+      <div class="journal-tools">
+        <button class="btn" id="micBtn" type="button">🎙️ تحدّث</button>
+        <span class="mic-status" id="micStatus"></span>
+        <button class="btn accent" id="saveJournal" type="button" style="margin-right:auto">حفظ المذكرة</button>
+      </div>
+      <div id="journalList" class="journal-list"></div>
+    </div>
+
+    <div class="card freeze-card">
+      <h3 style="margin:0 0 8px;color:var(--warn-text)">⏸ قاعدة التجميد</h3>
+      <p class="sub" style="margin:0 0 6px">إذا حدث أحد الآتي، ثبّت الجرعة أسبوعًا ولا تنتقل — وهذا ليس فشلًا:</p>
+      <ul class="freeze-list">
+        <li>نوم أقل من 4 ساعات لثلاث ليالٍ متتالية</li>
+        <li>قلق أو عصبية 8/10 أو أكثر</li>
+        <li>دوخة شديدة أو إحساس بالسقوط</li>
+        <li>أعراض انسحاب تؤثر على العمل بوضوح</li>
+      </ul>
+      <div class="freeze-action">
+        <div class="freeze-action-head">🧊 تجميد انتقائي لدواء معيّن</div>
+        <p class="sub" style="margin:0 0 8px">ثبّت تخفيض دواء واحد فقط عددًا من الأيام. تُزاح باقي محطاته للأمام تلقائيًا (الأدوية الأخرى تستمر طبيعيًا).</p>
+        <div class="freeze-controls">
+          <select id="freezeDrug">
+            <option value="NightCalm">نايت كالم</option>
+            <option value="Gabapentin">جابتين</option>
+            <option value="Armodacure">أرمودافينيل</option>
+          </select>
+          <select id="freezeDays">
+            <option value="3">3 أيام</option>
+            <option value="7" selected="">7 أيام (أسبوع)</option>
+            <option value="14">14 يومًا</option>
+          </select>
+          <button class="btn accent" id="applyFreeze" type="button">جمّد من اليوم</button>
+        </div>
+        <div id="freezeList" class="freeze-active-list"><span class="sub">لا تجميد نشط حاليًا.</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 6px">التكلفة المتبقية لإكمال الخطة</h3>
+      <p class="sub" style="margin:0 0 10px">محسوبة من جرعات الأيام المتبقية ناقص مخزونك الحالي.</p>
+      <div class="remaining-grid" id="remainingGrid"><div class="rg-item"><div class="rg-name">نايت كالم</div><div class="rg-box">8 علبة</div><div class="rg-cost">840 ج</div></div><div class="rg-item"><div class="rg-name">جابتين</div><div class="rg-box">14 علبة</div><div class="rg-cost">2100 ج</div></div><div class="rg-item"><div class="rg-name">أرمودافينيل</div><div class="rg-box">5 علبة</div><div class="rg-cost">1590 ج</div></div></div>
+      <div class="remaining-total">
+        <span>الإجمالي المطلوب شراؤه</span>
+        <b id="remainingTotal">4530 ج</b>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 6px">الجرعات المستهدفة اليوم</h3>
+      <p class="sub" id="targetsText">نايت كالم: <b>15</b>mg — جابتين: <b>3200</b>mg — أرمودافينيل: <b>300</b>mg.</p>
+      <div class="bar"><span id="progressBar" style="width:0%"></span></div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 8px">تسجيل اليوم</h3>
+      <table class="table" id="drugTable">
+        <thead><tr><th>دواء</th><th>هدف</th><th>أُخذ</th><th>تحذير</th><th>متبقي</th><th>أيام</th></tr></thead>
+        <tbody><tr><td style="text-align:right">نايت كالم (زوبيكلون)</td><td>15</td><td><input type="text" inputmode="numeric" style="width:90px" value="" data-key="NightCalm" class="doseInput"></td><td class="sub" id="warn_NightCalm"></td><td id="left_NightCalm">0</td><td id="days_NightCalm"><span class="bad">تنبيه 0 يوم</span></td></tr><tr><td style="text-align:right">جابتين (كونفنتين)</td><td>3200</td><td><input type="text" inputmode="numeric" style="width:90px" value="" data-key="Gabapentin" class="doseInput"></td><td class="sub" id="warn_Gabapentin"></td><td id="left_Gabapentin">0</td><td id="days_Gabapentin"><span class="bad">تنبيه 0 يوم</span></td></tr><tr><td style="text-align:right">أرمودافينيل (أرموفيك)</td><td>300</td><td><input type="text" inputmode="numeric" style="width:90px" value="" data-key="Armodacure" class="doseInput"></td><td class="sub" id="warn_Armodacure"></td><td id="left_Armodacure">0</td><td id="days_Armodacure"><span class="bad">تنبيه 0 يوم</span></td></tr></tbody>
+      </table>
+      <div class="row" style="margin-top:10px">
+        <button class="btn accent" id="saveDay">حفظ</button>
+        <button class="btn" id="voiceNote">ملاحظة صوتية</button>
+        <span id="saveMsg" class="muted"></span>
+      </div>
+    </div>
+
+    <div class="card half">
+      <h3>المكملات</h3>
+      <div class="row">
+        <label class="pill"><input type="checkbox" id="supAM"> صباحًا</label>
+        <label class="pill"><input type="checkbox" id="supNoon"> ظهرًا</label>
+        <label class="pill"><input type="checkbox" id="supPM"> مساءً</label>
+        <label class="pill"><input type="checkbox" id="supBed"> قبل النوم</label>
+      </div>
+      <label style="margin-top:10px">ملاحظات</label>
+      <textarea id="notes" rows="4" placeholder="اكتب أو اضغط الميكروفون..."></textarea>
+    </div>
+
+    <div class="card half">
+      <h3>مؤشرات اليوم</h3>
+      <div class="row" style="gap:8px">
+        <div style="min-width:140px"><label>الطاقة (1–10)</label><input type="number" id="kpiEnergy" min="1" max="10"></div>
+        <div style="min-width:140px"><label>النوم (ساعات)</label><input type="number" id="kpiSleep" min="0" max="12" step="0.5"></div>
+        <div style="min-width:140px"><label>القلق</label><input type="number" id="kpiAnxiety" min="0" max="20"></div>
+        <div style="min-width:140px"><label>الهضم (1–10)</label><input type="number" id="kpiGut" min="1" max="10"></div>
+      </div>
+      <div class="row" style="margin-top:12px; gap:6px; justify-content:center">
+        <span class="pill mood" id="mood_1" onclick="setMood(1)">مكتئب</span>
+        <span class="pill mood" id="mood_2" onclick="setMood(2)">متوتر</span>
+        <span class="pill mood active" id="mood_3" onclick="setMood(3)">عادي</span>
+        <span class="pill mood" id="mood_4" onclick="setMood(4)">جيد</span>
+        <span class="pill mood" id="mood_5" onclick="setMood(5)">ممتاز</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>المخزون (ملخص)</h3>
+      <table class="table" id="invTable">
+        <thead><tr><th>دواء</th><th>mg/قرص</th><th>أقراص/علبة</th><th>علب</th><th>متبقي</th><th>أيام متبقية</th><th>تنبيه</th></tr></thead>
+        <tbody><tr><td style="text-align:right">نايت كالم (زوبيكلون)</td><td>3</td><td>30</td><td>0</td><td>0</td><td><span class="bad">تنبيه 0</span></td><td class="bad">نفاد قريب</td></tr><tr><td style="text-align:right">جابتين (كونفنتين)</td><td>400</td><td>30</td><td>0</td><td>0</td><td><span class="bad">تنبيه 0</span></td><td class="bad">نفاد قريب</td></tr><tr><td style="text-align:right">أرمودافينيل (أرموفيك)</td><td>150</td><td>30</td><td>0</td><td>0</td><td><span class="bad">تنبيه 0</span></td><td class="bad">نفاد قريب</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<dialog id="invDlg"><form method="dialog">
+  <h3>إعدادات المخزون</h3>
+  <div id="invForm"></div>
+  <div class="row" style="margin-top:10px;justify-content:flex-end">
+    <button class="btn" value="cancel">إلغاء</button>
+    <button class="btn accent" id="saveInv" value="ok">حفظ</button>
+  </div>
+</form></dialog>
+
+<dialog id="remDlg"><form method="dialog">
+  <h3>تذكيرات مواعيد الجرعات</h3>
+  <div class="grid" style="grid-template-columns:repeat(2,1fr);gap:8px">
+    <div><label>صباحًا</label><input id="remAM" placeholder="08:30"></div>
+    <div><label>ظهرًا</label><input id="remNoon" placeholder="13:30"></div>
+    <div><label>مساءً</label><input id="remPM" placeholder="18:00"></div>
+    <div><label>قبل النوم</label><input id="remBed" placeholder="22:30"></div>
+    <div style="grid-column:span 2"><label><input type="checkbox" id="remEnable"> تفعيل التنبيهات</label></div>
+  </div>
+  <div id="notifStatus" style="margin-top:10px;font-size:12.5px;padding:8px 10px;border-radius:8px;background:var(--input-bg);border:1px solid var(--border)"></div>
+  <button type="button" class="btn" id="enableNotif" style="margin-top:8px;width:100%">🔔 تفعيل إشعارات النظام (تظهر والتبويب في الخلفية)</button>
+  <div class="row" style="margin-top:10px;justify-content:flex-end">
+    <button class="btn" value="cancel">إلغاء</button>
+    <button class="btn accent" id="saveRem" value="ok">حفظ</button>
+  </div>
+</form></dialog>
+
+<script src="./رحلة التعافي22 — خطة طبيبي_files/jspdf.umd.min.js.تنزيل"></script>
+<script>
+/* ===== التخزين ===== */
+const LS_DATA="taper_data_v2", LS_START="taper_start_v2", LS_INV="taper_inv_v2", LS_REM="taper_rem_v2", LS_DARK="taper_dark_v2", LS_JOURNAL="taper_journal_v2";
+const PLAN_DAYS=90;
+/* ===== تحويل الأرقام ===== */
+function toAsciiDigits(str){ if(typeof str!=="string")return str; const ar="٠١٢٣٤٥٦٧٨٩",fa="۰۱۲۳۴۵۶۷۸۹";let o="";for(const c of str){const i=ar.indexOf(c);if(i>-1){o+=i;continue;}const j=fa.indexOf(c);if(j>-1){o+=j;continue;}o+=c;}return o;}
+function parseNum(v){if(!v)return"";const n=Number(toAsciiDigits(String(v)).replace(/[^\d.]/g,""));return Number.isFinite(n)?n:"";}
+/* ===== التواريخ ===== */
+function getStartDate(){let s=localStorage.getItem(LS_START);if(!s){const d=new Date(2026,6,4);d.setHours(0,0,0,0);localStorage.setItem(LS_START,d.toISOString());s=d.toISOString();}return new Date(s);}
+function setStartDate(d){d.setHours(0,0,0,0);localStorage.setItem(LS_START,d.toISOString());renderAll();}
+function getDayIndex(){const st=getStartDate().getTime(),now=new Date();now.setHours(0,0,0,0);return Math.min(PLAN_DAYS,Math.max(1,Math.floor((now-st)/86400000)+1));}
+const weekOf = d => Math.ceil(d/7);
+/* ===== الجرعات (خطة الطبيب المعتمدة) ===== */
+/* محطات الخطة: [يوم البداية النسبي, نايت كالم, جابتين, أرمودافينيل] */
+/* البداية 17 يونيو = يوم 1. المحطات بالأيام: */
+const MILESTONES=[
+  {day:1,  NightCalm:15,  Gabapentin:3200, Armodacure:300},
+  {day:4,  NightCalm:13.5,Gabapentin:3000, Armodacure:300},
+  {day:11, NightCalm:12,  Gabapentin:2800, Armodacure:300},
+  {day:18, NightCalm:12,  Gabapentin:2600, Armodacure:300},
+  {day:25, NightCalm:10.5,Gabapentin:2400, Armodacure:300},
+  {day:32, NightCalm:10.5,Gabapentin:2200, Armodacure:225},
+  {day:39, NightCalm:9,   Gabapentin:2000, Armodacure:225},
+  {day:46, NightCalm:7.5, Gabapentin:1800, Armodacure:225},
+  {day:53, NightCalm:6,   Gabapentin:1600, Armodacure:150},
+  {day:60, NightCalm:4.5, Gabapentin:1200, Armodacure:150},
+  {day:67, NightCalm:3,   Gabapentin:1000, Armodacure:100},
+  {day:75, NightCalm:3,   Gabapentin:800,  Armodacure:100}
+];
+const DRUGKEYS=["NightCalm","Gabapentin","Armodacure"];
+/* ===== نظام التجميد الانتقائي ===== */
+/* لكل دواء: قائمة فترات تجميد {from: يوم البدء, days: عدد أيام التثبيت} */
+/* التجميد يوقف تخفيض هذا الدواء فقط، ويزيح محطاته اللاحقة للأمام */
+function getFreezes(){try{return JSON.parse(localStorage.getItem('taper_freezes_v2')||'{}');}catch(e){return {};}}
+function saveFreezes(o){localStorage.setItem('taper_freezes_v2',JSON.stringify(o));}
+/* إجمالي أيام الإزاحة المطبّقة على دواء حتى يوم معيّن */
+function freezeOffset(drug,day){
+  const fz=getFreezes()[drug]||[];let off=0;
+  for(const f of fz){ if(f.from<=day){ off += Math.min(f.days, Math.max(0, day - f.from + 1)); } }
+  return off;
+}
+function doseAtRaw(drug,day){
+  if(day<1)day=1; if(day>PLAN_DAYS)day=PLAN_DAYS;
+  let cur=MILESTONES[0][drug];
+  for(const m of MILESTONES){ if(m.day<=day)cur=m[drug]; else break; }
+  return cur;
+}
+function doseAt(drug,day){
+  // اطرح إزاحة التجميد: الدواء "يعيش" في يوم أبكر من التقويم بمقدار أيام تجميده
+  const eff = day - freezeOffset(drug,day);
+  return doseAtRaw(drug, eff);
+}
+function rebuildTargets(){
+  DRUGKEYS.forEach(k=>{targets[k]=new Array(PLAN_DAYS+1).fill(0);for(let d=1;d<=PLAN_DAYS;d++)targets[k][d]=doseAt(k,d);});
+}
+function doseAtLegacy(drug,day){
+  if(day<1)day=1; if(day>PLAN_DAYS)day=PLAN_DAYS;
+  let cur=MILESTONES[0][drug];
+  for(const m of MILESTONES){ if(m.day<=day)cur=m[drug]; else break; }
+  return cur;
+}
+const targets={};
+rebuildTargets();
+/* أي محطة يبدأ فيها تخفيض جديد (لإظهار "تخفيض اليوم") */
+function isCutDay(drug,day){const t=targets[drug];return day>1 && t[day]<t[day-1];}
+
+/* ===== محرك توقّع أعراض الانسحاب (مبني على أدلة علمية) ===== */
+/* يحسب: أي دواء خُفّض، ومنذ كم يوم (اليوم 0-2 بعد التخفيض = الذروة) */
+function daysSinceCut(drug,day){
+  const t=targets[drug];let last=1;
+  for(let d=2;d<=day;d++){ if(t[d]<t[d-1]) last=d; }
+  return day-last; // 0 = يوم التخفيض نفسه
+}
+function anyRecentCut(day){
+  // يعيد قائمة الأدوية التي خُفّضت خلال آخر 3 أيام مع عدد الأيام
+  const res=[];
+  DRUGKEYS.forEach(k=>{
+    for(let back=0;back<=2;back++){
+      const d=day-back;
+      if(d>1 && targets[k][d]<targets[k][d-1]){ res.push({drug:k,ago:back}); break; }
+    }
+  });
+  return res;
+}
+/* قاعدة معرفة الأعراض حسب الدواء (من أدلة الانسحاب) */
+const SYMPTOMS={
+  NightCalm:{
+    name:"نايت كالم (زوبيكلون)",
+    peak:"أول ٢-٣ ليالٍ بعد كل تخفيض",
+    list:["أرق ارتدادي (صعوبة نوم مؤقتة)","أحلام مكثفة أو متقطعة","قلق أو توتر مسائي","تحفّز عصبي خفيف"],
+    science:"عند خفض الزوبيكلون تقل تقوية مستقبلات GABA المثبّطة مؤقتًا، فيرتدّ النوم ويزيد التحفّز. مستقبلاتك تحتاج أيامًا لتعيد ضبط نفسها — لهذا الليلتان الأوليان الأصعب ثم يتحسّن."
+  },
+  Gabapentin:{
+    name:"جابتين (كونفنتين)",
+    peak:"خلال ١-٧ أيام من التخفيض",
+    list:["قلق أو تململ","اضطراب معدة أو غثيان خفيف","تعرّق","صعوبة نوم"],
+    science:"الجابتين يؤثر على منظومة التهدئة العصبية. خفضه التدريجي يعطي جهازك وقتًا للتكيّف، لهذا نخفضه بخطوات صغيرة (٢٠٠مجم) وهو آخر ما يُخفّض — كوسادة أمان."
+  },
+  Armodacure:{
+    name:"أرمودافينيل (أرموفيك)",
+    peak:"أول ٣-٥ أيام بعد التخفيض",
+    list:["خمول صباحي","إرهاق أو نعاس نهاري","بطء تركيز مؤقت","انخفاض دافعية"],
+    science:"اعتاد جسمك على منبّه خارجي لبدء اليقظة، فتراجع نظام التنبيه الطبيعي (الدوبامين والأوركسين). عند الخفض يحتاج أسابيع لإعادة تشغيل نفسه — الخمول مؤقت وعلامة تعافٍ لا انتكاس."
+  }
+};
+/* تدخلات CBT مطابقة لكل عَرَض/حالة */
+const CBT={
+  sleep:{
+    short:"لو تأخّر النوم: لا تقاوم في السرير. اخرج، اجلس بضوء خافت ١٥ دقيقة، ثم عُد.",
+    long:"تقنية «التحكّم بالمثير»: السرير للنوم فقط. إن لم تنم خلال ٢٠ دقيقة، غادره لغرفة أخرى بإضاءة خافتة وافعل شيئًا رتيبًا (قراءة هادئة) حتى تشعر بالنعاس، ثم عُد. كرّر دون عقاب للنفس. الهدف كسر ارتباط السرير بالقلق. تجنّب الشاشات والساعة.",
+    reframe:"فكرة تلقائية: «لن أنام، غدًا سيكون كارثة». إعادة صياغة: «الأرق الارتدادي متوقّع بعد التخفيض ومؤقت. نمتُ من قبل في ظروف أصعب. ليلة أقل نومًا مزعجة لا كارثية»."
+  },
+  anxiety:{
+    short:"للقلق الآن: تنفّس ٤-٧-٨ (شهيق ٤، حبس ٧، زفير ٨) ثلاث مرات.",
+    long:"تمرين التأريض ٥-٤-٣-٢-١: سمِّ ٥ أشياء تراها، ٤ تسمعها، ٣ تلمسها، ٢ تشمّها، ١ تتذوقها. يعيد دماغك من دوامة القلق إلى الحاضر. تليها كتابة القلق على ورقة وتأجيله لـ«موعد قلق» محدد (١٥ دقيقة مساءً) بدل مطاردته طوال اليوم.",
+    reframe:"فكرة: «هذا القلق دليل أن حالتي تسوء». صياغة: «القلق عَرَض انسحاب كيميائي معروف، ليس حكمًا على تقدّمي. جسمي يعيد التوازن»."
+  },
+  morning:{
+    short:"للخمول الصباحي: ضوء + ماء + حركة دقيقتين قبل أي حكم على يومك.",
+    long:"«تنشيط سلوكي»: لا تنتظر الدافعية لتتحرك — الحركة تصنع الدافعية. أول ١٠ دقائق: افتح الستائر (ضوء طبيعي يوقف الميلاتونين)، اشرب ماءً، امشِ في المكان. لا تقرّر أن «يومي فاشل» قبل مرور ساعة؛ الخمول الصباحي أسوأ لحظة في اليوم وليس مقياسه.",
+    reframe:"فكرة: «أنا كسول وفاشل». صياغة: «هذا خمول دوائي متوقّع في هذه الساعة تحديدًا، لا صفة فيّ. طاقتي سترتفع خلال ساعتين»."
+  },
+  gut:{
+    short:"للمعدة: وجبات صغيرة، ماء دافئ، وتجنّب الكافيين على معدة فارغة.",
+    long:"الاضطراب الهضمي شائع في الانسحاب. خفّف على معدتك: وجبات صغيرة متعددة بدل الكبيرة، إبطاء الأكل، ماء كافٍ، وتقليل المنبّهات. لو استمر بشدة، دوّنه لعرضه على الطبيب.",
+    reframe:"فكرة: «شيء خطير يحدث». صياغة: «الجهاز الهضمي حسّاس للتغيّر العصبي، وهذا مؤقت ومتوقّع»."
+  },
+  general:{
+    short:"اليوم مستقر نسبيًا — استثمر ذلك في ترسيخ عادة صغيرة (مشي، ماء، نوم منتظم).",
+    long:"الأيام المستقرة ثمينة: تبني فيها الاحتياطي الذي يحملك في الأيام الصعبة. رسّخ إيقاعك (نوم واستيقاظ في وقت ثابت، مشي، ترطيب) فهو ما يخفّف حدة التخفيضات القادمة.",
+    reframe:"فكرة: «الهدوء مؤقت وسيأتي ما هو أسوأ». صياغة: «كل يوم مستقر يقوّي جهازي العصبي فعليًا. أنا أتقدّم»."
+  }
+};
+/* يختار حزمة الدعم المناسبة لليوم */
+function supportForDay(day){
+  const cuts=anyRecentCut(day);
+  // أولوية: تخفيض حديث لأحد الأدوية
+  if(cuts.length){
+    // اختر الأحدث (الأقل ago)
+    cuts.sort((a,b)=>a.ago-b.ago);
+    const c=cuts[0];const s=SYMPTOMS[c.drug];
+    let cbtKey= c.drug==='NightCalm'?'sleep': c.drug==='Armodacure'?'morning':'anxiety';
+    const agoTxt = c.ago===0?"اليوم يوم تخفيض":c.ago===1?"مضى يوم على التخفيض":`مضى ${c.ago} يومان على التخفيض`;
+    return {drug:c.drug, sym:s, cbt:CBT[cbtKey], agoTxt, cutMode:true};
+  }
+  // لا تخفيض حديث => يوم تثبيت/استقرار
+  return {drug:null, sym:null, cbt:CBT.general, agoTxt:"يوم تثبيت — لا تخفيض حديث", cutMode:false};
+}
+
+/* ===== البيانات ===== */
+function loadAll(){const r=localStorage.getItem(LS_DATA);return r?JSON.parse(r):{};}
+function saveAll(o){localStorage.setItem(LS_DATA,JSON.stringify(o));}
+function getDayData(i){const a=loadAll();return a[i]||{meds:{},kpi:{},sup:{},notes:"",mood:3};}
+function setDayData(i,d){const a=loadAll();a[i]=d;saveAll(a);}
+/* ===== المخزون ===== */
+function defaultInv(){return{NightCalm:{mgPerTab:3,tabsPerBox:30,boxes:0,looseTabs:0,alertTabs:6},Gabapentin:{mgPerTab:400,tabsPerBox:30,boxes:0,looseTabs:0,alertTabs:6},Armodacure:{mgPerTab:150,tabsPerBox:30,boxes:0,looseTabs:0,alertTabs:6}};}
+function getInv(){const r=localStorage.getItem(LS_INV);return r?JSON.parse(r):defaultInv();}
+function saveInv(o){localStorage.setItem(LS_INV,JSON.stringify(o));}
+function totalTabsLeft(inv,k){const p=inv[k].tabsPerBox||0,b=(inv[k].boxes||0)*p,l=inv[k].looseTabs||0;return Math.round((b+l)*1000)/1000;}
+function daysLeft(drug, day){const inv=getInv(),tabs=totalTabsLeft(inv,drug),mgLeft=tabs*(inv[drug].mgPerTab||1);let acc=0;for(let d=day;d<=PLAN_DAYS;d++){acc+=targets[drug][d]||0;if(acc>mgLeft)return d-day;}return 999;}
+/* ===== العناصر ===== */
+const els={startDateLabel:document.getElementById("startDateLabel"),dayIdxLabel:document.getElementById("dayIdxLabel"),weekLabel:document.getElementById("weekLabel"),weekPhase:document.getElementById("weekPhase"),targetsText:document.getElementById("targetsText"),progressBar:document.getElementById("progressBar"),progressText:document.getElementById("progressText"),drugTableBody:document.querySelector("#drugTable tbody"),invTableBody:document.querySelector("#invTable tbody"),saveMsg:document.getElementById("saveMsg"),supAM:document.getElementById("supAM"),supNoon:document.getElementById("supNoon"),supPM:document.getElementById("supPM"),supBed:document.getElementById("supBed"),notes:document.getElementById("notes"),kpiEnergy:document.getElementById("kpiEnergy"),kpiSleep:document.getElementById("kpiSleep"),kpiAnxiety:document.getElementById("kpiAnxiety"),kpiGut:document.getElementById("kpiGut")};
+const DRUGS=[{key:"NightCalm",label:"نايت كالم (زوبيكلون)"},{key:"Gabapentin",label:"جابتين (كونفنتين)"},{key:"Armodacure",label:"أرمودافينيل (أرموفيك)"}];
+const PRICES={NightCalm:{packPrice:105,packCount:30,mgPerTab:3},Gabapentin:{packPrice:150,packCount:30,mgPerTab:400},Armodacure:{packPrice:318,packCount:30,mgPerTab:150}};
+let currentDay = getDayIndex();
+let chartInstance = null;
+/* ===== الرسم البياني ===== */
+function renderChart(){
+  /* رسم SVG مستقل بدون أي مكتبة خارجية — يعمل دائمًا بلا إنترنت */
+  const host=document.getElementById('chartHost');if(!host)return;
+  const W=700,H=180,padL=34,padR=10,padT=12,padB=22;
+  const innerW=W-padL-padR,innerH=H-padT-padB;
+  const x=d=>padL+innerW*(d-1)/(PLAN_DAYS-1);
+  const y=pct=>padT+innerH*(1-pct/100);
+  const series=[['NightCalm','#e0843b'],['Gabapentin','#3b82f6'],['Armodacure','#16a34a']];
+  const today=getDayIndex();
+  let grid='';
+  [0,25,50,75,100].forEach(p=>{const yy=y(p).toFixed(1);grid+=`<line x1="${padL}" y1="${yy}" x2="${W-padR}" y2="${yy}" stroke="var(--border)" stroke-width="1"/><text x="${padL-6}" y="${(+yy+3).toFixed(1)}" text-anchor="end" font-size="10" fill="var(--muted)">${p}%</text>`;});
+  let paths='';
+  series.forEach(([k,c])=>{
+    let dd='';
+    for(let d=1;d<=PLAN_DAYS;d++){const pct=Math.round(targets[k][d]/targets[k][1]*100);dd+=(d===1?'M':'L')+x(d).toFixed(1)+' '+y(pct).toFixed(1)+' ';}
+    paths+=`<path d="${dd}" fill="none" stroke="${c}" stroke-width="2.5" stroke-linejoin="round"/>`;
+  });
+  /* خط اليوم الحالي */
+  const tx=x(today).toFixed(1);
+  const todayLine=`<line x1="${tx}" y1="${padT}" x2="${tx}" y2="${H-padB}" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 3"/><text x="${tx}" y="${padT-2}" text-anchor="middle" font-size="10" fill="var(--accent)">اليوم</text>`;
+  host.innerHTML=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto" preserveAspectRatio="xMidYMid meet">${grid}${paths}${todayLine}</svg>`;
+}
+/* ===== النصائح ===== */
+const TIPS_HOME=[
+ "اليوم يوم بيت — الخمول الصباحي أقوى هنا. لا تقاومه بالنوم أكثر، بل بالضوء: افتح الستائر واجلس قرب الشباك أول ساعة.",
+ "قسّم الكتابة لجلسات 25 دقيقة مع وقفة قصيرة. الخمول يسيطر على الجلسات الطويلة لا القصيرة.",
+ "اشرب كوب ماء فور الاستيقاظ قبل أي شيء. الجفاف وحده يضاعف الخمول الصباحي في البيت.",
+ "يوم البيت لا يحتاج طاقة بطل، يحتاج إيقاع. خطوة صغيرة الآن أهم من خطة مثالية بعد ساعة."
+];
+const TIPS_WORK=[
+ "يوم عمل — بيئة الخارج تعطيك تنبيهًا طبيعيًا يعوّض جزءًا من نقص الأرمودافينيل. الأمور أسهل اليوم مما تتوقع.",
+ "في أيام العمل الأعراض أخف. أثبت لنفسك أن التخفيض ممكن دون انهيار.",
+ "بعد العمل لا تعوّض الإرهاق بجرعة إضافية أو قيلولة طويلة — ماء ومشي خفيف بدلًا منها."
+];
+const TIPS_PHASE_VAC=[
+ "أنت في شهر التحول. لا ضغط عمل، فالنوم أولوية مطلقة. نَم وقت ما يأتي النوم واستيقظ في وقت ثابت.",
+ "أصعب أسابيع التخفيض في أغسطس. لو ظهرت أعراض، التجميد أسبوعًا قرار ذكي لا ضعف.",
+ "كل خطوة صغيرة هنا تُبنى عليها بداية سبتمبر التي تنتظرها."
+];
+const TIP_REASSURE="وصلت للترامادول وأقلعت عنه تمامًا. القدرة موجودة فيك بالفعل — هذه المرة نجعل الطريق أقصر نفسيًا فقط.";
+function renderTips(day){
+  const start=getStartDate();
+  const date=new Date(start.getTime()+(day-1)*86400000);
+  const dow=date.getDay(); // 0=Sun..6=Sat
+  const isHome=[5,6,0,1].includes(dow);
+  const names=['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+  document.getElementById('tipDay').textContent=names[dow]+' · '+(isHome?'يوم بيت':'يوم عمل');
+  const h=day; // deterministic per plan-day
+  let tip = isHome ? TIPS_HOME[h%TIPS_HOME.length] : TIPS_WORK[h%TIPS_WORK.length];
+  if(day>=40 && h%3===0) tip=TIPS_PHASE_VAC[h%TIPS_PHASE_VAC.length];
+  if(h%7===0) tip=TIP_REASSURE;
+  document.getElementById('tipBody').textContent=tip;
+  const mins=10+Math.min(20,Math.floor((day-1)/14)*5);
+  document.getElementById('walkMin').textContent=mins;
+}
+/* ===== عبارات تحفيزية سياقية ===== */
+const MOTIVATE_CUT=[
+ "اليوم صعب لأنك تتقدّم فعلًا، لا لأنك تفشل. الجسم يعيد ضبط نفسه.",
+ "هذه الذروة مؤقتة بطبيعتها — بعد يومين يخفّ الحمل. اصبر على الموجة.",
+ "خطوة تخفيض اليوم شجاعة حقيقية. أنت تفعل الأصعب وتستحق التقدير.",
+ "تذكّر: أقلعت عن الترامادول تمامًا من قبل. القدرة فيك مثبتة."
+];
+const MOTIVATE_STABLE=[
+ "يوم هادئ = فرصة ذهبية لترسيخ إيقاعك. استثمره بلطف.",
+ "الاستقرار ليس ركودًا، بل بناء صامت لاحتياطي يحملك لاحقًا.",
+ "كل يوم تعبره يقرّبك من سبتمبر الذي تنتظره. أنت ماضٍ في الطريق."
+];
+function renderSupport(day){
+  const card=document.getElementById('supportCard');if(!card)return;
+  const s=supportForDay(day);
+  const eyebrow=document.getElementById('supEyebrow');
+  const ago=document.getElementById('supAgo');
+  const title=document.getElementById('supTitle');
+  const symWrap=document.getElementById('supSymptoms');
+  const science=document.getElementById('supScience');
+  const cbtShort=document.getElementById('supCbtShort');
+  const cbtLong=document.getElementById('supCbtLong');
+  const reframe=document.getElementById('supReframe');
+  const motivate=document.getElementById('supMotivate');
+  ago.textContent=s.agoTxt;
+  if(s.cutMode && s.sym){
+    eyebrow.textContent="توقّع علمي — بعد التخفيض";
+    title.textContent=`أعراض متوقّعة: ${s.sym.name}`;
+    symWrap.innerHTML=s.sym.list.map(x=>`<span class="sup-chip">${x}</span>`).join("");
+    science.innerHTML=`<b>لماذا؟</b> ${s.sym.science} <br><span style="color:var(--muted)">الذروة: ${s.sym.peak}.</span>`;
+    motivate.textContent=MOTIVATE_CUT[day%MOTIVATE_CUT.length];
+  } else {
+    eyebrow.textContent="يوم تثبيت";
+    title.textContent="لا تخفيض حديثًا — يوم استقرار";
+    symWrap.innerHTML=`<span class="sup-chip">أعراض خفيفة أو معدومة غالبًا</span>`;
+    science.innerHTML=`<b>حالتك اليوم:</b> جسمك يتكيّف مع الجرعة الحالية. استغل الاستقرار لترسيخ النوم المنتظم والمشي والترطيب.`;
+    motivate.textContent=MOTIVATE_STABLE[day%MOTIVATE_STABLE.length];
+  }
+  cbtShort.textContent=s.cbt.short;
+  cbtLong.textContent=s.cbt.long;
+  reframe.innerHTML=`<b>إعادة صياغة معرفية:</b><br>${s.cbt.reframe}`;
+}
+/* ===== التكلفة المتبقية ===== */
+function renderRemaining(){
+  const inv=getInv();const grid=document.getElementById('remainingGrid');if(!grid)return;grid.innerHTML="";let total=0;
+  DRUGS.forEach(dr=>{
+    const k=dr.key;
+    let needMg=0;for(let d=currentDay;d<=PLAN_DAYS;d++)needMg+=targets[k][d]||0;
+    const haveTabs=totalTabsLeft(inv,k);const haveMg=haveTabs*(PRICES[k].mgPerTab);
+    const shortMg=Math.max(0,needMg-haveMg);
+    const tabsNeeded=Math.ceil(shortMg/PRICES[k].mgPerTab);
+    const packs=Math.ceil(tabsNeeded/PRICES[k].packCount);
+    const cost=packs*PRICES[k].packPrice;total+=cost;
+    const div=document.createElement('div');div.className='rg-item';
+    div.innerHTML=`<div class="rg-name">${k==='NightCalm'?'نايت كالم':k==='Gabapentin'?'جابتين':'أرمودافينيل'}</div><div class="rg-box">${packs} علبة</div><div class="rg-cost">${cost} ج</div>`;
+    grid.appendChild(div);
+  });
+  document.getElementById('remainingTotal').textContent=total+' ج';
+}
+/* ===== التقديم ===== */
+function renderAll(day = currentDay){currentDay=day;const start=getStartDate();
+els.startDateLabel.textContent=start.toLocaleDateString('ar-EG');
+els.dayIdxLabel.textContent=day+(day!==getDayIndex()?" (عرض)":"");
+els.weekLabel.textContent=weekOf(day);
+const phase = day<=39 ? "قبل الإجازة" : "الإجازة (أغسطس)";
+els.weekPhase.textContent=phase;
+const t={N:targets.NightCalm[day],G:targets.Gabapentin[day],A:targets.Armodacure[day]};
+els.targetsText.innerHTML=`نايت كالم: <b>${t.N}</b>mg — جابتين: <b>${t.G}</b>mg — أرمودافينيل: <b>${t.A}</b>mg.`;
+els.drugTableBody.innerHTML="";const dd=getDayData(day);let achieved=0;const inv=getInv();
+DRUGS.forEach(dr=>{const target=targets[dr.key][day]??0,val=(dd.meds&&dd.meds[dr.key]!==undefined)?dd.meds[dr.key]:"",tabsLeft=totalTabsLeft(inv,dr.key),days=daysLeft(dr.key,day),cut=isCutDay(dr.key,day),tr=document.createElement("tr");
+tr.innerHTML=`<td style="text-align:right">${dr.label}${cut?' <span class="tag-cut">تخفيض اليوم</span>':''}</td><td>${target}</td><td><input type="text" inputmode="numeric" style="width:90px" value="${val}" data-key="${dr.key}" class="doseInput"></td><td class="sub" id="warn_${dr.key}"></td><td id="left_${dr.key}">${tabsLeft}</td><td id="days_${dr.key}">${days>=999?"∞":days<7?`<span class="bad">تنبيه ${days} يوم</span>`:days+" يوم"}</td>`;
+els.drugTableBody.appendChild(tr);
+const inp=tr.querySelector(".doseInput");inp.addEventListener("input",e=>{const k=e.target.dataset.key,v=parseNum(e.target.value),warn=document.getElementById("warn_"+k);if(v===""){warn.textContent="";warn.className="sub";return;}if(v>target){warn.textContent="أعلى من المستهدف";warn.className="bad";}else{warn.textContent="";warn.className="sub";}});
+if(target===0){if(val!==""&&Number(val)===0)achieved++;}else{const n=parseNum(val);if(n!==""&&n<=target+1e-6)achieved++;}});
+els.progressBar.style.width=(Math.round((achieved/DRUGS.length)*100))+"%";els.progressText.textContent=Math.round((achieved/DRUGS.length)*100)+"%";
+els.supAM.checked=!!dd.sup?.AM;els.supNoon.checked=!!dd.sup?.Noon;els.supPM.checked=!!dd.sup?.PM;els.supBed.checked=!!dd.sup?.Bed;els.notes.value=dd.notes||"";els.kpiEnergy.value=dd.kpi?.energy??"";els.kpiSleep.value=dd.kpi?.sleep??"";els.kpiAnxiety.value=dd.kpi?.anxiety??"";els.kpiGut.value=dd.kpi?.gut??"";setMood(dd.mood??3);
+renderInventoryTable();renderChart();renderTips(day);renderSupport(day);renderRemaining();}
+/* ===== جدول المخزون ===== */
+function renderInventoryTable(){const inv=getInv();els.invTableBody.innerHTML="";DRUGS.filter(d=>d.key!=="Caffeine").forEach(dr=>{const tabs=totalTabsLeft(inv,dr.key),low=(inv[dr.key].alertTabs||0)>0&&tabs<=inv[dr.key].alertTabs,days=daysLeft(dr.key,currentDay),tr=document.createElement("tr");tr.innerHTML=`<td style="text-align:right">${dr.label}</td><td>${inv[dr.key].mgPerTab||0}</td><td>${inv[dr.key].tabsPerBox||0}</td><td>${inv[dr.key].boxes||0}</td><td>${tabs}</td><td>${days>=999?"∞":days<7?`<span class="bad">تنبيه ${days}</span>`:days}</td><td class="${low?'bad':'sub'}">${low?'نفاد قريب':''}</td>`;els.invTableBody.appendChild(tr);});}
+/* ===== حفظ اليوم ===== */
+document.getElementById("saveDay").addEventListener("click",()=>{const idx=currentDay,data=getDayData(idx);data.meds=data.meds||{};const inv=getInv();document.querySelectorAll(".doseInput").forEach(inp=>{const k=inp.dataset.key,v=parseNum(inp.value);data.meds[k]=v;if(k!=="Caffeine"&&v&&inv[k]&&inv[k].mgPerTab>0){const used=v/inv[k].mgPerTab;let t=totalTabsLeft(inv,k)-used;if(t<0)t=0;const p=inv[k].tabsPerBox||1;inv[k].boxes=Math.floor(t/p);inv[k].looseTabs=Math.round((t-inv[k].boxes*p)*1000)/1000;}});data.sup={AM:els.supAM.checked,Noon:els.supNoon.checked,PM:els.supPM.checked,Bed:els.supBed.checked};data.kpi={energy:parseNum(els.kpiEnergy.value),sleep:parseNum(els.kpiSleep.value),anxiety:parseNum(els.kpiAnxiety.value),gut:parseNum(els.kpiGut.value)};data.notes=els.notes.value;data.mood=currentMood;setDayData(idx,data);saveInv(inv);els.saveMsg.textContent="تم الحفظ ✅";setTimeout(()=>{els.saveMsg.textContent="";},1500);DRUGS.filter(d=>d.key!=="Caffeine").forEach(dr=>{const c=document.getElementById("left_"+dr.key);if(c)c.textContent=totalTabsLeft(inv,dr.key);});renderInventoryTable();renderAll();});
+/* ===== التنقل ===== */
+document.getElementById("prevDay").onclick=()=>{currentDay=Math.max(1,currentDay-1);renderAll();};document.getElementById("nextDay").onclick=()=>{currentDay=Math.min(PLAN_DAYS,currentDay+1);renderAll();};
+/* ===== الوضع الليلي ===== */
+document.getElementById("darkMode").onclick=()=>{document.body.classList.toggle("night");localStorage.setItem(LS_DARK,document.body.classList.contains("night"));};if(localStorage.getItem(LS_DARK)==="true")document.body.classList.add("night");
+/* ===== المزاج ===== */
+let currentMood=3;function setMood(m){currentMood=m;document.querySelectorAll('.mood').forEach(el=>el.classList.remove('active'));document.getElementById(`mood_${m}`).classList.add('active');}
+/* ===== المخزون ===== */
+document.getElementById("openInv").addEventListener("click",()=>{const inv=getInv(),form=document.getElementById("invForm");form.innerHTML="";DRUGS.filter(d=>d.key!=="Caffeine").forEach(dr=>{const i=inv[dr.key]||{},row=document.createElement("div");row.className="grid";row.style.gridTemplateColumns="repeat(5,1fr)";row.style.gap="8px";row.style.marginBottom="10px";row.innerHTML=`<div style="grid-column:span 5"><b>${dr.label}</b></div><div><label>mg/قرص</label><input data-k="${dr.key}" data-f="mgPerTab" type="number" min="1" value="${i.mgPerTab||0}"></div><div><label>أقراص/علبة</label><input data-k="${dr.key}" data-f="tabsPerBox" type="number" min="1" value="${i.tabsPerBox||0}"></div><div><label>عدد العلب</label><input data-k="${dr.key}" data-f="boxes" type="number" min="0" value="${i.boxes||0}"></div><div><label>أقراص مفردة</label><input data-k="${dr.key}" data-f="looseTabs" type="number" min="0" step="0.5" value="${i.looseTabs||0}"></div><div><label>حد تنبيه</label><input data-k="${dr.key}" data-f="alertTabs" type="number" min="0" value="${i.alertTabs||0}"></div>`;form.appendChild(row);});document.getElementById("invDlg").showModal();});
+document.getElementById("saveInv").addEventListener("click",()=>{const inv=getInv();document.getElementById("invForm").querySelectorAll("input").forEach(inp=>{const k=inp.dataset.k,f=inp.dataset.f;if(k&&f)inv[k][f]=Number(inp.value)||0;});saveInv(inv);document.getElementById("invDlg").close();renderAll();});
+/* ===== التذكيرات ===== */
+function updateNotifStatus(){
+  const el=document.getElementById("notifStatus");if(!el)return;
+  if(!("Notification" in window)){el.innerHTML="⚠️ متصفحك لا يدعم إشعارات النظام. سيُستخدم التنبيه الصوتي داخل الصفحة فقط.";return;}
+  const p=Notification.permission;
+  if(p==="granted")el.innerHTML="✅ إشعارات النظام مفعّلة — ستصلك التنبيهات حتى لو كان التبويب في الخلفية.";
+  else if(p==="denied")el.innerHTML="🚫 الإشعارات محظورة. فعّلها من إعدادات الموقع في المتصفح، ثم أعد المحاولة.";
+  else el.innerHTML="🔕 لم تُفعّل إشعارات النظام بعد. اضغط الزر أدناه لتفعيلها.";
+}
+document.getElementById("openRem").addEventListener("click",()=>{const r=JSON.parse(localStorage.getItem(LS_REM)||'{}');document.getElementById("remAM").value=r.AM||"";document.getElementById("remNoon").value=r.Noon||"";document.getElementById("remPM").value=r.PM||"";document.getElementById("remBed").value=r.Bed||"";document.getElementById("remEnable").checked=!!r.enable;updateNotifStatus();document.getElementById("remDlg").showModal();});
+document.getElementById("enableNotif").addEventListener("click",()=>{
+  if(!("Notification" in window)){updateNotifStatus();return;}
+  Notification.requestPermission().then(()=>{updateNotifStatus();});
+});
+document.getElementById("saveRem").addEventListener("click",()=>{const r={AM:document.getElementById("remAM").value.trim(),Noon:document.getElementById("remNoon").value.trim(),PM:document.getElementById("remPM").value.trim(),Bed:document.getElementById("remBed").value.trim(),enable:document.getElementById("remEnable").checked};localStorage.setItem(LS_REM,JSON.stringify(r));document.getElementById("remDlg").close();alert("تم حفظ التذكيرات ✅");});
+function timesEqualNow(t){if(!t)return false;const [h,m]=t.split(":");if(h===undefined)return false;const n=new Date();return n.getHours()==Number(h)&&n.getMinutes()==Number(m);}
+function beep(){try{const ctx=new AudioContext(),o=ctx.createOscillator(),g=ctx.createGain();o.type="sine";o.frequency.value=880;o.connect(g);g.connect(ctx.destination);g.gain.setValueAtTime(0.001,ctx.currentTime);g.gain.exponentialRampToValueAtTime(0.3,ctx.currentTime+0.02);o.start();setTimeout(()=>{g.gain.exponentialRampToValueAtTime(0.0001,ctx.currentTime+0.4);o.stop(ctx.currentTime+0.45);},400);}catch(e){}}
+function fireNotify(label){
+  // إشعار نظام إن وُجد الإذن
+  try{
+    if(("Notification" in window) && Notification.permission==="granted"){
+      new Notification("💊 موعد جرعة — رحلة التعافي",{body:label+" — لا تنسَ تسجيل جرعتك اليوم.",tag:"dose-"+label});
+    }
+  }catch(e){}
+  // تنبيه داخل الصفحة (احتياطي دائم)
+  beep();
+  const box=document.createElement("div");box.textContent="🔔 تذكير: "+label;box.style.cssText="position:fixed;bottom:16px;left:16px;background:#12311e;border:1px solid #1f7a3e;padding:10px 12px;border-radius:10px;z-index:9999;color:#fff;font-size:13px;";document.body.appendChild(box);setTimeout(()=>box.remove(),6000);
+}
+let lastFiredMinute="";
+function reminderLoop(){const r=JSON.parse(localStorage.getItem(LS_REM)||'{}');if(!r.enable)return;
+  const now=new Date();const stamp=now.getHours()+":"+now.getMinutes();
+  if(stamp===lastFiredMinute)return; // منع التكرار في نفس الدقيقة
+  const labels=[["AM","صباحًا"],["Noon","ظهرًا"],["PM","مساءً"],["Bed","قبل النوم"]];
+  for(const [key,lbl] of labels){ if(timesEqualNow(r[key])){lastFiredMinute=stamp;fireNotify(lbl);break;} }
+}
+setInterval(reminderLoop,30000);
+/* ===== وحدة المذكرات الصوتية ===== */
+function getJournal(){try{return JSON.parse(localStorage.getItem(LS_JOURNAL)||'[]');}catch(e){return [];}}
+function saveJournalArr(a){localStorage.setItem(LS_JOURNAL,JSON.stringify(a));}
+function renderJournal(){
+  const list=document.getElementById('journalList');const count=document.getElementById('journalCount');
+  if(!list)return;const arr=getJournal();
+  count.textContent=arr.length?`${arr.length} مذكرة`:'لا مذكرات بعد';
+  list.innerHTML=arr.map((it,i)=>`<div class="journal-item"><div class="journal-item-date"><span>${it.date}</span><button class="journal-del" data-i="${i}">حذف</button></div><div class="journal-item-text">${(it.text||'').replace(/</g,'&lt;')}</div></div>`).join('');
+  list.querySelectorAll('.journal-del').forEach(b=>b.addEventListener('click',e=>{
+    const i=+e.target.dataset.i;const a=getJournal();
+    if(confirm('حذف هذه المذكرة؟')){a.splice(i,1);saveJournalArr(a);renderJournal();}
+  }));
+}
+(function initJournal(){
+  const saveBtn=document.getElementById('saveJournal');
+  const micBtn=document.getElementById('micBtn');
+  const input=document.getElementById('journalInput');
+  const micStatus=document.getElementById('micStatus');
+  if(!saveBtn)return;
+  saveBtn.addEventListener('click',()=>{
+    const text=(input.value||'').trim();if(!text){input.focus();return;}
+    const arr=getJournal();
+    const now=new Date();
+    const date=now.toLocaleDateString('ar-EG')+' · '+now.toLocaleTimeString('ar-EG',{hour:'2-digit',minute:'2-digit'});
+    arr.unshift({date,text,ts:now.getTime()});
+    saveJournalArr(arr);input.value='';renderJournal();
+    micStatus.textContent='تم الحفظ ✅';setTimeout(()=>micStatus.textContent='',2000);
+  });
+  // Web Speech API
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){micBtn.disabled=true;micBtn.textContent='🎙️ غير مدعوم';micStatus.textContent='المايك يعمل على Chrome. استخدم مايك لوحة المفاتيح بدلًا منه.';return;}
+  let rec=null,listening=false;
+  micBtn.addEventListener('click',()=>{
+    if(listening){rec&&rec.stop();return;}
+    rec=new SR();rec.lang='ar-EG';rec.interimResults=true;rec.continuous=true;
+    let base=input.value?input.value+' ':'';
+    rec.onstart=()=>{listening=true;micBtn.classList.add('mic-btn-active');micBtn.textContent='⏹️ إيقاف';micStatus.textContent='أستمع… تحدّث الآن';};
+    rec.onresult=(e)=>{let interim='',final='';for(let i=e.resultIndex;i<e.results.length;i++){const t=e.results[i][0].transcript;if(e.results[i].isFinal)final+=t;else interim+=t;}input.value=base+final+interim;if(final)base+=final;};
+    rec.onerror=(e)=>{micStatus.textContent='تعذّر الاستماع ('+e.error+'). تأكد من الإنترنت وإذن المايك.';};
+    rec.onend=()=>{listening=false;micBtn.classList.remove('mic-btn-active');micBtn.textContent='🎙️ تحدّث';if(micStatus.textContent.startsWith('أستمع'))micStatus.textContent='';};
+    try{rec.start();}catch(e){micStatus.textContent='تعذّر بدء المايك.';}
+  });
+})();
+/* ===== وحدة التجميد الانتقائي ===== */
+const DRUG_AR={NightCalm:'نايت كالم',Gabapentin:'جابتين',Armodacure:'أرمودافينيل'};
+function renderFreezeList(){
+  const list=document.getElementById('freezeList');if(!list)return;
+  const fz=getFreezes();const rows=[];
+  DRUGKEYS.forEach(k=>{(fz[k]||[]).forEach((f,i)=>{
+    const start=getStartDate();const dt=new Date(start.getTime()+(f.from-1)*86400000);
+    rows.push(`<div class="freeze-active-item"><span>🧊 ${DRUG_AR[k]}: تثبيت ${f.days} يوم من ${dt.toLocaleDateString('ar-EG')}</span><button data-k="${k}" data-i="${i}">إلغاء</button></div>`);
+  });});
+  list.innerHTML=rows.length?rows.join(''):'<span class="sub">لا تجميد نشط حاليًا.</span>';
+  list.querySelectorAll('button').forEach(b=>b.addEventListener('click',e=>{
+    const k=e.target.dataset.k,i=+e.target.dataset.i,fz=getFreezes();
+    if(confirm('إلغاء هذا التجميد وإرجاع الخطة لوضعها السابق؟')){fz[k].splice(i,1);saveFreezes(fz);rebuildTargets();renderAll();renderFreezeList();}
+  }));
+}
+(function initFreeze(){
+  const btn=document.getElementById('applyFreeze');if(!btn)return;
+  btn.addEventListener('click',()=>{
+    const drug=document.getElementById('freezeDrug').value;
+    const days=+document.getElementById('freezeDays').value;
+    const from=getDayIndex();
+    const fz=getFreezes();if(!fz[drug])fz[drug]=[];
+    fz[drug].push({from,days});saveFreezes(fz);
+    rebuildTargets();renderAll();renderFreezeList();
+    const dn=DRUG_AR[drug];
+    alert(`تم تثبيت ${dn} لمدة ${days} يوم من اليوم. باقي محطاته أُزيحت للأمام، والأدوية الأخرى تستمر طبيعيًا. ✅`);
+  });
+  renderFreezeList();
+})();
+/* ===== أزرار عامة ===== */
+document.getElementById("resetStart").addEventListener("click",()=>{const s=prompt("أدخل تاريخ البدء (YYYY-MM-DD) أو اتركه فارغ لليوم:", "");if(s===null)return;const d=s.trim()?new Date(s+"T00:00:00"):new Date();if(isNaN(d))return alert("تاريخ غير صالح");setStartDate(d);});
+document.getElementById("wipe").addEventListener("click",()=>{if(confirm("مسح كل البيانات؟")){localStorage.removeItem(LS_DATA);localStorage.removeItem(LS_INV);renderAll();}});
+document.getElementById("exportCsv").addEventListener("click",()=>{const all=loadAll();let csv="Day,Date,NightCalm,Gabapentin,Armodacure,Supp_AM,Supp_Noon,Supp_PM,Supp_Bed,Energy,Sleep,Anxiety,Gut,Mood,Notes\n";for(let d=1;d<=PLAN_DAYS;d++){const date=new Date(getStartDate().getTime()+(d-1)*86400000).toISOString().slice(0,10),row=all[d]||{},meds=row.meds||{},sup=row.sup||{},k=row.kpi||{};csv+=[d,date,meds.NightCalm??"",meds.Gabapentin??"",meds.Armodacure??"",sup.AM?1:0,sup.Noon?1:0,sup.PM?1:0,sup.Bed?1:0,k.energy??"",k.sleep??"",k.anxiety??"",k.gut??"",row.mood??"",'"'+(row.notes||"").replace(/"/g,'""')+'"\n'].join(",");}const blob=new Blob([csv],{type:"text/csv;charset=utf-8"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="تقرير_التعافي.csv";a.click();URL.revokeObjectURL(a.href);});
+document.getElementById("exportPdf").addEventListener("click",()=>{const {jsPDF}=window.jspdf,doc=new jsPDF();doc.setFont("Amiri","normal");doc.text("تقرير رحلة التعافي",105,10,null,null,"center");let y=20;for(let d=1;d<=PLAN_DAYS;d++){const data=getDayData(d),meds=data.meds||{},sup=data.sup||{},k=data.kpi||{};if(Object.keys(meds).length===0&&data.notes==="")continue;doc.text(`يوم ${d} - ${new Date(getStartDate().getTime()+(d-1)*86400000).toLocaleDateString('ar-EG')}`,10,y);y+=7;doc.text(`N: ${meds.NightCalm||0} | G: ${meds.Gabapentin||0} | A: ${meds.Armodacure||0}`,10,y);y+=7;if(data.notes)doc.text(data.notes.substring(0,100)+(data.notes.length>100?"...":""),10,y);y+=10;if(y>270){doc.addPage();y=20;}}doc.save("تقرير_التعافي.pdf");});
+/* ===== الكتابة الصوتية ===== */
+document.getElementById("voiceNote").addEventListener("click",()=>{if(!('SpeechRecognition' in window || 'webkitSpeechRecognition' in window))return alert("الميكروفون غير مدعوم");const recog=new (window.SpeechRecognition || window.webkitSpeechRecognition)();recog.lang="ar-SA";recog.onresult=e=>{els.notes.value+=(e.results[0][0].transcript)+" ";els.notes.focus();};recog.onerror=()=>{alert("فشل التعرف");};recog.start();});
+/* ===== الحفظ التلقائي ===== */
+setInterval(()=>{if(document.getElementById("saveDay"))document.getElementById("saveDay").click();},30000);
+/* ===== PWA ===== */
+if('serviceWorker' in navigator){navigator.serviceWorker.register('data:application/javascript,self.addEventListener("install",e=>self.skipWaiting());');}
+/* ===== تشغيل ===== */
+renderAll();renderJournal();setInterval(()=>{if(getDayIndex()!==currentDay)renderAll();},60000);
+</script>
+
+<iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;" src="./رحلة التعافي22 — خطة طبيبي_files/saved_resource.html"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}" style="display: none;"></div></body></html>
